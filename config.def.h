@@ -84,25 +84,24 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
-
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	/* solarized dark: 8 normal colors */
+	"#073642",  /* black */
+	"#dc322f",  /* red */
+	"#859900",  /* green */
+	"#b58900",  /* yellow */
+	"#268bd2",  /* blue */
+	"#d33682",  /* magenta */
+	"#2aa198",  /* cyan */
+	"#eee8d5",  /* white */
+	/* solarized dark: 8 "bright" colors */
+	"#002b36",  /* brblack */
+	"#cb4b16",  /* brred */
+	"#586e75",  /* brgreen */
+	"#657b83",  /* bryellow */
+	"#839496",  /* brblue */
+	"#6c71c4",  /* brmagenta*/
+	"#93a1a1",  /* brcyan */
+	"#fdf6e3",  /* brwhite */
 
 	[255] = 0,
 
@@ -111,15 +110,42 @@ static const char *colorname[] = {
 	"#555555",
 };
 
+/* Terminal colors for alternate (light) palette */
+const char *altcolorname[] = {
+	/* solarized light: 8 normal colors */
+	"#eee8d5",  /* black */
+	"#dc322f",  /* red */
+	"#859900",  /* green */
+	"#b58900",  /* yellow */
+	"#268bd2",  /* blue */
+	"#d33682",  /* magenta */
+	"#2aa198",  /* cyan */
+	"#073642",  /* white */
+	/* solarized light: 8 "bright" colors */
+	"#fdf6e3",  /* brblack */
+	"#cb4b16",  /* brred */
+	"#93a1a1",  /* brgreen */
+	"#839496",  /* bryellow */
+	"#657b83",  /* brblue */
+	"#6c71c4",  /* brmagenta*/
+	"#586e75",  /* brcyan */
+	"#002b36",  /* brwhite */
+
+	[255] = 0,
+
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#cccccc",
+	"#555555",
+};
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 12;
+unsigned int defaultbg = 8;
+static unsigned int defaultcs = 14;
+static unsigned int defaultrcs = 15;
 
 /*
  * Default shape of cursor
@@ -178,6 +204,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
+	{ TERMMOD,              XK_S,           swapcolors,     {.i =  0} },
 };
 
 /*

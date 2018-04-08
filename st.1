@@ -81,6 +81,9 @@ writes all the I/O to
 This feature is useful when recording st sessions. A value of "-" means
 standard output.
 .TP
+.B \-s
+start with alternate color scheme.
+.TP
 .BI \-T " title"
 defines the window title (default 'st').
 .TP
@@ -163,6 +166,9 @@ Paste from the clipboard selection.
 .B Ctrl-Shift-i
 Launch dmenu to enter a unicode codepoint and send the corresponding glyph
 to st.
+.TP
+.B Ctrl-Shift-s
+Swap between main and alternative colorschemes.
 .SH CUSTOMIZATION
 .B st
 can be customized by creating a custom config.h and (re)compiling the source

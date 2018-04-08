@@ -85,6 +85,7 @@ void printscreen(const Arg *);
 void printsel(const Arg *);
 void sendbreak(const Arg *);
 void toggleprinter(const Arg *);
+void swapcolors(const Arg *);
 
 int tattrset(int);
 void tnew(int, int);
@@ -121,3 +122,4 @@ extern char *termname;
 extern unsigned int tabspaces;
 extern unsigned int defaultfg;
 extern unsigned int defaultbg;
+extern int usealtcolors;
